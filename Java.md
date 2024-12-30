@@ -505,9 +505,11 @@ public class Demo01Constant{
 
 ### 5.2 变量
 
-#### 5.1.1 变量的类型
+#### 5.2.1 变量的类型
 
-变量是在代码运行的过程中，值会随着不同的情况而随时发生改变的数据
+概述：变量是在代码运行的过程中，值会随着不同的情况而随时发生改变的数据
+
+作用：一次接受一个数据，定义一个变量，接受一个值，后续会根据不同情况修改此值
 
 | 数据类型     | 关键字  | 内存占用 | 取值范围       |
 | ------------ | ------- | -------- | -------------- |
@@ -522,5 +524,159 @@ public class Demo01Constant{
 
 > 引用数据类型：类、数组、接口、枚举、注解
 
+#### 5.2.2 变量的定义
 
+```java
+// 方法一：声明时确定值
+数据类型 变量名 = 值;
+// 方式二：先声明，再确认值
+数据类型 变量名;
+变量名 = 值;
+// 方式三：一次声明多个相同类型变量
+数据类型 变量名1, 变量名2, 变量名3;
+变量1 = 值1;
+变量2 = 值2;
+变量3 = 值3;
+// 方式四：一次声明多个相同类型变量并赋值
+数据类型 变量名1 = 值1, 变量名2 = 值2, 变量名3 = 值3;
+```
+
+> 字符串不属于基本数据类型，属于引用数据类型
+>
+> String 是一个类，只不过在定义的时候可以和基本数据类型一样
+
+ ```java
+ public class Demo04Var{
+ 	public static void main(String[] args){
+ 		// byte
+ 		byte num1 = 100;
+ 		System.out.println(num1);
+ 		
+ 		// short
+ 		short num2 = 255;
+ 		System.out.println(num2);
+ 		
+ 		// int 整数的默认类型
+ 		int num3 = 10000;
+ 		System.out.println(num3);
+ 		
+ 		// long -> 定义 long 型的变量后面要加个 L 
+ 		long num4 = 10L;
+ 		System.out.println(num4);
+ 		
+ 		// float -> 定义 float 型变量的时候后面加个 F 
+ 		float num5 = 2.5F;
+ 		System.out.println(num5);
+ 		
+ 		// double -> 小数的默认类型
+ 		double num6 = 2.5;
+ 		System.out.println(num6);
+ 		
+ 		// char
+ 		char num7 = 'A';
+ 		System.out.println(num7);
+ 		
+ 		// boolean
+ 		boolean num8 = false;
+ 		System.out.println(num8);
+ 		
+ 		// String -> 是一个引用数据类型，属于类的一种，但是定义和基本类型一致
+ 		String name = "潘金莲";
+ 		System.out.println(name);
+ 	}
+ }
+ ```
+
+#### 5.2.3 变量的运算
+
+```java
+public class Demo04Var{
+	public static void main(String[] args){
+ 		int num1 = 10;
+        int num2 = 3;
+        int sum = num1 + num2;
+        int sub = num1 - num2;
+        int mul = num1 * num2;
+        int div = num1 / num2;
+    }
+}
+```
+
+#### 5.2.4 转义字符
+
+转义字符：\
+
+- 可以将普通字符转成具有特殊含义的字符
+- 将具有特殊含义的字符转成普通字符
+
+| 转义字符 | 含义   |
+| -------- | ------ |
+| \n       | 换行符 |
+| \t       | 制表符 |
+| \\\      | \      |
+
+  
+
+### 5.3 变量使用时的注意事项
+
+1. 变量初始化不可以直接使用，必须赋值
+
+2. 在同一个作用域内不能定义重名的变量
+
+   > 作用域：一对 `{}` 内的内容
+
+3. 不同作用域的数据不要随意互相访问
+
+   > 内部作用域可以访问外部作用域的变量，反之不可以
+
+
+
+### 5.4 练习：使用变量定义一个人的属性
+
+```java
+public class Demo05VarPerson{
+	public static void main(String[] args){
+		// 姓名
+		String name = "张三";
+		// 性别
+		char gender = 'M';
+		// 年龄
+		int age = 20;
+		// 身高
+		double height = 175.5;
+		// 体重
+		double weight = 145.5;
+		
+		System.out.println(name);
+		System.out.println(gender);
+		System.out.println(age);
+		System.out.println(height);
+		System.out.println(weight);
+	}
+}
+```
+
+***
+
+## 第 6 章 标识符
+
+**硬性规定**
+
+1. 可以包含英文字母、数字、$ 和 _
+2. 不能以数字开头
+3. 不能是已有的关键字
+
+**软性建议**
+
+类名采用大驼峰式命名的方法 `PersonAttribution`
+
+方法、变量名采用小驼峰式命名 `setInitialName`、`studentName`
+
+***
+
+## 第 7 章 数据类型转换
+
+什么时候发生类型转换？
+
+1. 等号两边的类型不一致的时候
 
